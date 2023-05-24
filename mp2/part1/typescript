@@ -1,0 +1,53 @@
+Script started on 2023-03-14 01:12:20-04:00 [TERM="xterm-256color" TTY="/dev/pts/147" COLUMNS="172" LINES="38"]
+bisrat@pe15:~/cs341/mp2/part1$ ls
+countc.c  countc.o  count.lnx  count.o	count.s  count.syms  makefile  sum  sum10c.c  sum10.s  syms  typescript  warmup
+bisrat@pe15:~/cs341/mp2/part1$ ls -lg
+total 92
+-rw-r--r-- 1 cs341-1G   461 Mar 13 11:11 countc.c
+-rw-r--r-- 1 cs341-1G  6548 Mar 13 12:48 countc.o
+-rwxr-xr-x 1 cs341-1G 30576 Mar 13 12:48 count.lnx
+-rw-r--r-- 1 cs341-1G   568 Mar 13 12:48 count.o
+-rw-r--r-- 1 cs341-1G   949 Mar 13 12:48 count.s
+-rw-r--r-- 1 cs341-1G  1046 Mar 13 12:48 count.syms
+-rw-r--r-- 1 cs341-1G  2082 Mar 13 11:11 makefile
+-rwxr-xr-x 1 cs341-1G 16600 Mar 13 11:11 sum
+-rw-r--r-- 1 cs341-1G   177 Mar 13 11:11 sum10c.c
+-rw-r--r-- 1 cs341-1G   424 Mar 13 11:11 sum10.s
+lrwxrwxrwx 1 cs341-1G    10 Mar 13 12:48 syms -> count.syms
+-rw-r--r-- 1 cs341-1G     0 Mar 14 01:12 typescript
+-rw-r--r-- 1 cs341-1G  2627 Mar 14 00:26 warmup
+bisrat@pe15:~/cs341/mp2/part1$ cat count.s
+.text
+ .globl count
+ 
+count:
+ pushl %ebp        #Creating a stack
+        movl  %esp, %ebp  # Setting the esp value to ebp
+        subl $8, %esp   # Substracting 8 decimal from the address of the register %esp
+        movl 12(%ebp), %edx  # char set 
+        movl 8(%ebp), %ecx   # string set
+ movl $0, %eax        # counter set 0
+        
+loop: 
+       cmpb %dl, (%ecx)     # compare the single character with each character in the string
+       jz  sum             #jumping to the sum
+       cmpb $0x00, (%ecx)   # compare the character 
+       jz  end                
+       addl $1, %ecx         # going to next character
+       jmp loop               #jumping to loop
+                     
+sum:                             #this part to sum up the number of characters
+      addl $1, %eax          # increment counter sum
+      addl $1, %ecx          
+      jmp loop
+
+end: 
+      movl %ebp, %esp        # back to main
+      popl %ebp
+      ret
+bisrat@pe15:~/cs341/mp2/part1$ make A=count
+make: 'count.lnx' is up to date.
+bisrat@pe15:~/cs341/mp2/part1$ exit
+exit
+
+Script done on 2023-03-14 01:13:17-04:00 [COMMAND_EXIT_CODE="0"]

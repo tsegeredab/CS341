@@ -1,0 +1,81 @@
+Working on MP1 I learned about how to create a txt file using nano, an executable file as ./tutor and make tutor that it creates a .c file
+I learned make command compiles the code and that I must use ctrl x to save my work on cdms.c file.
+Nano command will allow me to write and edit code, then I use the ctrl x to save.
+ I have also learned when I type script that the server will record every work I did and will show as typescript.
+In this assignment I have learned how to copy from other directory to another and creating and deleting different directories on the termina, viewing different files and changing from directories to directories.
+
+In general, it teaches how to work on terminal.
+
+2. Read the makefile to see where it puts the symbol table (nm output) for your tutor code. Use that symbol table to figure out:
+.syms text file of .exe's symbols and their values (the "symbol table")
+# .usyms text file of UNIX executable's symbols
+
+
+a)
+For xyz it has 
+UNIX-tutor> md 0804c040
+Tsegereda 804c040; 06 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+................
+Reached mem_display, passed argument string: | 0804c040|
+
+b)
+For Pxyz it has 
+UNIX-tutor> md 0804c09c
+Tsegereda 804c09c; 40 c0 04 08 47 43 43 3a 20 28 55 62 75 6e 74 75 20 
+@...............
+Reached mem_display, passed argument string: | 0804c09c|
+
+
+
+(c) the address of the cmds array. Use this address to determine the very first pointer in the array, the string pointer to "md". Then find the 'm' and 'd' and terminating null of this string.
+
+If I put m or d there is nothing to be displayed. 
+
+(d) change the stop command from 's' to 'x' while the tutor program is running. Can you change the tutor prompt the same way?
+
+No I could not change the command but I was able to use the s and help command.
+The s or stop under Linux in usyms table has the address of,
+
+UNIX-tutor> md 0804938a
+Tsegereda 804938a; f3 0f 1e fb 55 89 e5 e8 f0 ff ff ff 05 6a 2c 00 00 
+................
+
+3)
+Read the nm output to determine where in memory the code resides, on SAPC and LINUX. Hint: code symbols are marked t or T. Similarly determine where the data (set of variables) resides. 
+
+There are symbol table for both tutor and linux. Linux has usyms and tutor syms symbol table the contains the xyz address which is 0804c040 and for the pointer pxyz it has the address of 0804c09c which will point to the address of xyz which is 0804c040.
+For the linux in the usyms table.
+
+4)
+Try to change the code itself so that tutor crashes (any random change that actually takes effect should do this). What happens on SAPC? on LINUX?
+If I did not restart every time the tutor doesn't work, I didn't have to try to crash the code.
+
+I have not tried to crash the code. Otherwise, I get command not found message. I also had to make sure I imported the code.
+
+(5)
+You can't find the program stack using the nm output, but you can find it by looking at the stack pointer, called %esp on the SAPC and LINUX. Record your observations. Use "i reg" (info on registers) to see %esp in gdb and "rd" to see registers in Tutor.
+
+From unix usyms I used the adress,
+08049680 T __stack_chk_fail_local
+08049680 T __stack_chk_fail_local
+08049590 T help
+0804c040 D xyz
+
+UNIX-tutor> md 08049590
+Tsegereda: 8049590; f3 0f 1e fb 55 89 e5 53 83 ec 24 e8 65 fc ff ff 81 
+....U..S..$.e...
+
+
+When I type rd on tutor I find EAX=00000001 EBX=0000000 and other ESI, ECX
+EFLAGS= 0206(IF=1 SF=0 ZF = 0 CF =0 OF=0)
+Which I could not copy from tutor.
+
+6.
+On tutor the memory display works well and displays what input it is given for example md 100 will show a result and describes what argument it has been given as string in this case it was given 100 as a string|100|
+
+If I type on the command line of tutor outside of those 4(ms, md,help) it will return “ no such command”
+
+It is worth the time it took. I have learned how to create files, and look for files, what the pointers point. the difference between the big Indian and the small Indian when it stores the memory address.
+What slowed me was figuring out how to work on tutor and installing it. Some of the instruction was hard to understand but I think I over think about it, but it is a very satisfying project.
+
+The assignments is clear and explanatory.

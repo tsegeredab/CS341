@@ -1,0 +1,45 @@
+Script started on Mon 20 Mar 2023 12:15:22 AM EDT
+tuser@tutor-vserver:~$ mtip -f strncpy.lnx
+For command help, type ~?
+For help on args, rerun without args
+Code starts at 0x100100
+Using board # 1 
+~downloading strncpy.lnx
+
+........Done.
+
+Download done, setting EIP to 100100.
+Tutor> go 100100
+Enter a string of characters:
+abc
+Enter the number of characters to copy:
+3
+The strncpy function returned the correct pointer value.
+The strncpy function copied the data correctly.
+The content of the first 3 characters of array s is: abcl
+Exception 3 at EIP=00100110: Breakpoint
+Tutor> go 100100
+Enter a string of characters:
+d
+Enter the number of characters to copy:
+2
+The strncpy function returned the correct pointer value.
+The strncpy function copied the data correctly.
+The content of the first 2 characters of array s is: d
+Exception 3 at EIP=00100110: Breakpoint
+Tutor> go 100100
+Enter a string of characters:
+null
+Enter the number of characters to copy:
+0
+The strncpy function returned the correct pointer value.
+The strncpy function copied the data correctly.
+The content of the first 0 characters of array s is: null
+Exception 3 at EIP=00100110: Breakpoint
+Tutor> 
+Tutor> 
+Quit handler: 
+killing process 1830 Leaving board #1
+tuser@tutor-vserver:~$ exit
+
+Script done on Mon 20 Mar 2023 12:18:23 AM EDT

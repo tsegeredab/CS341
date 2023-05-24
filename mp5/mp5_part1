@@ -1,0 +1,35 @@
+Script started on Thu 04 May 2023 05:51:48 PM EDT
+tuser@tutor-vserver:~$ script mp5_part1ls[Kmtip -f watchdog.lnx
+For command help, type ~?
+For help on args, rerun without args
+Code starts at 0x100100
+Using board # 1 
+~downloading watchdog.lnx
+
+........Done.
+
+Download done, setting EIP to 100100.
+Tutor> go 100100
+Exception 13 at EIP=000602e4: General protection violation
+Tutor> go 100100
+Calling set_intr_gate (irq = 3, n = 0x23) to arm interrupt...
+Commanding PIC to interrupt CPU for irq 3 (COM2_IRQ)
+enabling receiver interrupts in UART...
+...done, entering almost-infinite loop
+new char received is= A
+new char received is= B
+new char received is= C
+new char received is= D
+new char received is= E
+new char received is= F
+new char received is= G
+new char received is= 0
+new char received is= 1
+new char received is= 2
+~q 
+Quit handler: 
+killing process 1760 Leaving board #1
+tuser@tutor-vserver:~$ exit
+exit
+
+Script done on Thu 04 May 2023 05:53:51 PM EDT

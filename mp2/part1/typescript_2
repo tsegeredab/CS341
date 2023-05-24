@@ -1,0 +1,79 @@
+Script started on Tue 14 Mar 2023 12:29:29 AM EDT
+tuser@tutor-vserver:~$ mtip -f count[K[K[K[K[K[K[K[K[K[K[K[K[Kls
+countc.c   count.s     [0m[01;34mlib[0m       [01;34mtestaout[0m  test.s                   tutor.c
+[01;32mcount.lnx[0m  count.syms  makefile  test.c    tiny.s                   typescript
+count.o    [01;34minclude[0m     part1     [01;34mtestelf[0m   tsegereda_bisrat_bisrat  warmup
+tuser@tutor-vserver:~$ -[Kls -al[K[Klg
+total 1104
+-rw-r--r-- 1 tuser     461 Mar 13 23:56 countc.c
+-rwxr-xr-x 1 tuser   30576 Mar 14 00:29 [0m[01;32mcount.lnx[0m
+-rw-r--r-- 1 tuser     568 Mar 14 00:29 count.o
+-rw-r--r-- 1 tuser     949 Mar 14 00:29 count.s
+-rw-r--r-- 1 tuser    1046 Mar 14 00:29 count.syms
+drwxr-sr-x 2 tuser    4096 Jul 20  2015 [01;34minclude[0m
+drwxr-sr-x 2 tuser    4096 Jul 20  2015 [01;34mlib[0m
+-rw-r--r-- 1 tuser    2082 Mar 13 23:54 makefile
+-rw-r--r-- 1 tuser    2822 Mar 14 00:19 part1
+drwxr-sr-x 2 tuser    4096 Jul 20  2015 [01;34mtestaout[0m
+-rw-r--r-- 1 tuser     818 Jul 20  2015 test.c
+drwxr-sr-x 2 tuser    4096 Jul 20  2015 [01;34mtestelf[0m
+-rw-r--r-- 1 tuser      67 Jul 20  2015 test.s
+-rw-r--r-- 1 tuser     127 Mar 13 11:36 tiny.s
+-rw-r--r-- 1 tuser       0 Feb 24 20:43 tsegereda_bisrat_bisrat
+-rw-r--r-- 1 tuser    2321 Feb 24 18:43 tutor.c
+-rw-r--r-- 1 tuser       0 Mar 14 00:29 typescript
+-rw-r--r-- 1 tuser 1036288 Mar 14 00:29 warmup
+tuser@tutor-vserver:~$ mtip -f count.lnx
+For command help, type ~?
+For help on args, rerun without args
+Code starts at 0x100100
+Using board # 1 
+~downloading count.lnx
+
+........Done.
+
+Download done, setting EIP to 100100.
+Tutor> md 100100
+00100100    bc f0 ff 3f 00 bd 00 00 00 00 e8 01 00 00 00 cc ...?............
+Tutor> rd
+EAX=00000000 EBX=001023e0   EBP=00000000
+EDX=001017fc ECX=003fffe0   ESP=003ffff0
+ESI=003fff50 EDI=00101e28   EIP=00100100
+EFLAGS=0306 (IF=1 SF=0 ZF=0 CF=0 OF=0)
+Tutor> md 200
+00000200    0b 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+Tutor> ms 200
+Tutor> md 200 
+00000200    0b 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+Tutor> rs eip 100100
+Tutor> t
+Exception 1 at EIP=00100105: Debugger interrupt
+Tutor> rd
+EAX=00000000 EBX=001023e0   EBP=00000000
+EDX=001017fc ECX=003fffe0   ESP=003ffff0
+ESI=003fff50 EDI=00101e28   EIP=00100105
+EFLAGS=0306 (IF=1 SF=0 ZF=0 CF=0 OF=0)
+Tutor> md 200
+00000200    0b 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+Tutor> t
+Exception 1 at EIP=0010010a: Debugger interrupt
+Tutor> rd
+EAX=00000000 EBX=001023e0   EBP=00000000
+EDX=001017fc ECX=003fffe0   ESP=003ffff0
+ESI=003fff50 EDI=00101e28   EIP=0010010a
+EFLAGS=0306 (IF=1 SF=0 ZF=0 CF=0 OF=0)
+Tutor> md 200
+00000200    0b 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+Tutor> <CNTL-D><CNTL-D>q
+No such command: <CNTL-D><CNTL-D>q, use h command for help
+Tutor> q
+No such command: q, use h command for help
+Tutor> <CNTL-Q>
+No such command: <CNTL-Q>, use h command for help
+Tutor> 
+Tutor> 
+Quit handler: 
+killing process 1900 Leaving board #1
+tuser@tutor-vserver:~$ exit
+
+Script done on Tue 14 Mar 2023 12:32:28 AM EDT

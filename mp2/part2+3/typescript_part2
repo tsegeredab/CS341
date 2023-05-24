@@ -1,0 +1,36 @@
+Script started on Mon 20 Mar 2023 12:11:14 AM EDT
+tuser@tutor-vserver:~$ script warmup part1p bisrat@users.cs.umb.edu:cs341/mp2/part1/count.* .[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctypescript_2 bisrat@users.cs.umb.edu:cs341/mp2/part1/ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+countc.c    [0m[01;34mlib[0m           printbin.syms  test.c                   typescript
+[01;32mcount.lnx[0m   makefile      [01;32mstrncpy.lnx[0m    [01;34mtestelf[0m                  typescript_2
+count.o     part1         strncpy.o      test.s                   warmup
+count.s     [01;32mprintbin.lnx[0m  strncpy.s      tiny.s
+count.syms  printbin.o    strncpy.syms   tsegereda_bisrat_bisrat
+[01;34minclude[0m     printbin.s    [01;34mtestaout[0m       tutor.c
+tuser@tutor-vserver:~$ mtip -f printbin.lnx
+For command help, type ~?
+For help on args, rerun without args
+Code starts at 0x100100
+Using board # 1 
+~downloading printbin.lnx
+
+........Done.
+
+Download done, setting EIP to 100100.
+Tutor> go 100100
+enter the character's ascii value in hex: 
+3d
+The binary format for character = is 0011 1101
+Exception 3 at EIP=00100110: Breakpoint
+Tutor> go100100       100100
+enter the character's ascii value in hex: 
+d
+The binary format for character  is 0000 1101
+Exception 3 at EIP=00100110: Breakpoint
+Tutor> <CNTL-D><CNTL-D>
+Tutor> 
+Quit handler: 
+killing process 1810 Leaving board #1
+tuser@tutor-vserver:~$ exit
+
+Script done on Mon 20 Mar 2023 12:13:40 AM EDT
